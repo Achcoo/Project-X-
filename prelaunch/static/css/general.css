@@ -1,0 +1,66 @@
+{% load staticfiles %}
+{% load static %}
+
+@import url('https://fonts.googleapis.com/css?family=Catamaran');
+
+body{
+	background-image: "{% static 'images/background2.jpg' %}";
+	background-repeat: repeat;
+}
+.title{
+	font-family: 'Catamaran', sans-serif;
+	font-size: 48px;
+	text-shadow: 4px 4px 4px #aaa;
+}
+.text{
+	font-family: 'Sansita', sans-serif;
+}
+#myProgress {
+    background-color: grey;
+    width: 100%;
+}
+#myBar {
+    width: 1%;
+    height: 10px;
+    background-color: blue;
+}
+.zoom{
+	transition: 1.5s ease;
+ 	-moz-transition: 1.5s ease; /* Firefox */
+ 	-webkit-transition: 1.5s ease; /* Chrome - Safari */
+ 	-o-transition: 1.5s ease; /* Opera */
+}
+.zoom:hover{
+	transform : scale(1.5);
+	-moz-transform : scale(1.5); /* Firefox */
+	-webkit-transform : scale(1.5); /* Chrome - Safari */
+	-o-transform : scale(1.5); /* Opera */
+	-ms-transform : scale(1.5); /* IE9 */
+}
+
+
+.left-box{
+    position: absolute;
+    left: 100px;
+    z-index: 1;
+}
+
+.box-style{
+	border: 0px solid; /* dotted, solid, dashed double*/
+	border-color: black;
+	background-color: white;
+	box-shadow: 4px 4px 4px 4px #2ECCFA;
+	-webkit-box-shadow: 4px 4px 4px 4px #2ECCFA;
+    -moz-box-shadow: 4px 4px 4px 4px #2ECCFA;
+}
+
+.right-box{
+	position: absolute;
+	left: 450px;
+	top: 50px;
+	z-index: 0;
+}
+
+#description{
+	left: 50px;
+}

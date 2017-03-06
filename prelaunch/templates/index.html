@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+
+{% load staticfiles %}
+{% load static %} 
+
+<html lang="en">
+<head><!DOCTYPE html>
+
+
+<html lang="en">
+<head>
+  <title>PrelaunchApp</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-signin-client_id" content="1057193297406-hpm99hhqlbdfv73b49plpit2sbkri93s.apps.googleusercontent.com" charset="utf-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!--<link rel="stylesheet" type="text/css" href="css/style.css">-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://apis.google.com/js/client:platform.js?onload=renderButton" async defer></script>
+  <script type="text/javascript" src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/fb_script.js' %}"></script>
+  <!--<script type="text/javascript" src="js/li_script.js"></script>-->
+  <!--<script type="text/javascript" src="js/instagram_sdk/ig.js"></script>-->
+  <!--<script type="text/javascript" src="js/insta_script.js"></script>-->
+  <script type="text/javascript" src="{% static 'js/gplus_script.js' %}"></script>
+
+  <style type="text/css">
+    .circle {
+       width: 100px;
+       height: 100px;
+       border: 3px solid;
+       border-color: white;
+       -moz-border-radius: 50%;
+       -webkit-border-radius: 50%;
+       border-radius: 50%;
+       background: #00BBE9;
+  }
+  </style>
+</head>
+<body>
+  
+  <!-- HTML for displaying user details -->
+  <div class="userContent"></div>
+
+  <div id="fb-root"></div>
+
+  <div id="status"></div>
+  <div class="col-md-12">
+    <center>
+      <h3 id="thanks"></h3>
+    </center>
+  </div>
+  <div class="banner" style="background-image: url({% static 'images/banner.jpg' %}); position: relative; width: 1500px; left: -110px ">
+    <center>
+      <div class="container">
+          <div class="col-md-6"> 
+            <h1 id="text1" style="padding-top: 50px">Product XYZ</h1> 
+            <h4 id="text2" style="padding-top: 50px">Nuevo producto xyz, que te permite hacer xyz cosas en x menor tiempo. Ingresa y participa por uno de los sorteos que tenemos para que te lleves un kit completamente gratis</h4> 
+        </div>
+      
+          <div class="col-md-6">
+
+            <img id="product" src="{%static 'images/product.png' %}"/>
+
+            <div id="referal_link" style="display: none;"> 
+              <div class="circle" id="circle">
+                <h1>0</h1>
+                <p>Puntos</p>
+              </div>
+              <h2 id="sharelinktext1">Invita a tus amigos y gana increíbles recompensas</h2>
+              <p id="sharelinktext2">Copia el siguiente enlace y empieza a compartir para obtener más puntos</p>
+              <div class="link copy_btn" id="url_field" style="border: 2px solid #008; height: 30px;"></div>
+              <div class="button-group"><center>
+              <button onclick="" style="border: 0px; padding: 0px; background-color: transparent;">
+                <img src="{% static 'images/fbook_button.png' %}"/>
+              </button>
+              
+              <button style="border: 0px; padding: 0px; background-color: transparent;">
+                <img src="{% static 'images/tw_button.png' %}"/>
+              </button>
+
+              <button style="border: 0px; padding: 0px; background-color: transparent;">
+                <img src="{% static 'images/insta_button.png' %}"/>
+              </button>
+              <div id="gSignIn"></div>
+            </center>
+            </div>
+
+            </div>
+          </div>
+      </div>
+    </center>
+  </div>
+
+  <div class="container" id="social_links">
+    <center><h2> Ingresa para participar</h2></center>
+        <!-- <input type="text" style="border: 2px solid #008; height: 30px;"></input>
+        <button class="btn btn-primary btn-md" style="color: #008; height: 30px">Ingresar</button> -->
+    </center>
+    <div class="button-group"><center>
+      <button onclick="login()" style="border: 0px; padding: 0px; background-color: transparent;">
+        <img src="{% static 'images/fbook_button.png' %}"/>
+      </button>
+      
+      <button style="border: 0px; padding: 0px; background-color: transparent;">
+        <img src="{% static 'images/insta_button.png' %}" %}"/>
+      </button>
+
+      <button style="border: 0px; padding: 0px; background-color: transparent;">
+        <img src="{% static 'images/tw_button.png' %}"/>
+      </button>
+
+      <button style="border: 0px; padding: 0px; background-color: transparent;">
+        <img src="{% static 'images/wa_button.png' %}"/>
+      </button>
+      <button id="gSignIn" style="border: 0px; padding: 0px; background-color: transparent;">
+        <img src="{% static 'images/gplus_button.png' %}"/>
+      </button>
+
+    </center>
+    </div>
+  </div>
+
+  <div class="container" id="slider" style="display: none;">
+    <div class="col-md-12">
+      <h3> Recompensas a ganar:</h3>
+    </div>
+    <input type="range" min="0" max="100" value="0" step="1" list="tickmarks" id="rangeInput">
+      <datalist id="tickmarks">
+        <option value="0 to 20">0</option>
+          <option>20</option>
+          <option>40</option>
+          <option>60</option>
+          <option>80</option>
+          <option>100</option>
+      </datalist>
+    <div class="col-md-12">
+      <h4> 0 amigos se han unido:</h4>
+    </div>
+  </div>
+
+
+</body>
+<footer style="padding-top: 100px;">
+  <center>Todos los derechos reservados</center>
+</footer>
+</html>
