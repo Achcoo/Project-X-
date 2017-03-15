@@ -4,18 +4,18 @@ $(document).ready(function(){
 		$('.box').animate({'opacity':'1.00'}, 300, 'linear');
 		$('.backdrop, .box').css('display', 'block');
 	});
+
+	$('.signin_lightbox').click(function(){
+		$('.backdrop_signin, .box_signin').animate({'opacity':'.50'}, 300, 'linear');
+		$('.box_signin').animate({'opacity':'1.00'}, 300, 'linear');
+		$('.backdrop_signin, .box_signin').css('display', 'block');
+	});
  
 	$('.close').click(function(){
 		close_box();
 	});
 });
  
-function open_light_box(){
-	$('.backdrop, .box').animate({'opacity':'.50'}, 300, 'linear');
-	$('.box').animate({'opacity':'1.00'}, 300, 'linear');
-	$('.backdrop, .box').css('display', 'block');
-}
-
 function close_box()
 {
 	$('.backdrop, .box').animate({'opacity':'0'}, 300, 'linear', function(){
@@ -38,3 +38,7 @@ function move(points) {
       }
   }
 }
+
+$('.float-nav').hover(function() {
+  $('.main-nav, .menu-btn').toggleClass('active');
+});
