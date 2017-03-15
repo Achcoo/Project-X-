@@ -165,4 +165,17 @@ SOCIAL_AUTH_FACEBOOK_SECRET = '649ac062043d44e80f525d0f38d5be6e'
 SOCIAL_AUTH_LINKEDIN_OAUTH2_KEY = '86pilhbg0cn86n'
 SOCIAL_AUTH_LINKEDIN_OAUTH2_SECRET = '2v7vNHMf8QeL97Xd'
 
+#Deploy app on heroku
+import dj_database_url
+DATABASES['default'] = dj_database_url.config()
 
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+ALLOWED_HOSTS = ['*']
+
+DEBUG = False
+
+try:
+    from .local_settings import *
+except ImportError:
+    pass
