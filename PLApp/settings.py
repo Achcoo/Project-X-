@@ -142,7 +142,6 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     STATIC_PATH,
 )
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 AUTHENTICATION_BACKENDS = (
     #Python social Auth
@@ -166,7 +165,3 @@ SOCIAL_AUTH_FACEBOOK_SECRET = '649ac062043d44e80f525d0f38d5be6e'
 SOCIAL_AUTH_LINKEDIN_OAUTH2_KEY = '86pilhbg0cn86n'
 SOCIAL_AUTH_LINKEDIN_OAUTH2_SECRET = '2v7vNHMf8QeL97Xd'
 
-#Deploy app on heroku
-import dj_database_url
-db_from_env = dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(db_from_env)
