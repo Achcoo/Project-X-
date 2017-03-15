@@ -7,5 +7,5 @@ urlpatterns = [
   	url(r'^menu/$', Menu.as_view(), name="menu"),
   	url(r'^redSocial/', SocNetSignUp.as_view(), name="soc_net"),
   	#python social auth
-  	url('',       include('social.apps.django_app.urls', namespace='social')),
+  	#url('',       include('social.apps.django_app.urls', namespace='social')),
 ]
