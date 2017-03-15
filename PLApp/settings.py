@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'prelaunch',
     #python social auth
-    'social.apps.django_app.default',
+    #'social.apps.django_app.default',
 ]
 
 
