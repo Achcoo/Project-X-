@@ -86,7 +86,7 @@ session_start();
           </div>
           <div>
             <div class="col-md-1"></div>
-            <div class="col-md-10 link copy_btn" id="url_field" style="border: 2px solid #0000f4; height: 30px;"></div>
+            <div class="col-md-10 link copy_btn" id="url_field" style="border: 2px solid #0000f4; height: 30px;"> </div>
             <div class="col-md-1"></div>
           </div>
           <div class="col-md-12 button-group" style="position: relative;top: -50px"><center>
@@ -94,13 +94,13 @@ session_start();
               <img src="{% static 'images/fbook_button.png' %}"/>
             </button>
               
-            <button style="border: 0px; padding: 0px; background-color: transparent;">
+            <button class="twitter-share-button" href="https://twitter.com/intent/tweet" style="border: 0px; padding: 0px; background-color: transparent;">
               <img src="{% static 'images/tw_button.png' %}"/>
             </button>
 
-            <button style="border: 0px; padding: 0px; background-color: transparent;">
+            <!--<button style="border: 0px; padding: 0px; background-color: transparent;">
               <img src="{% static 'images/insta_button.png' %}"/>
-            </button>
+            </button>-->
           </center>
           </div>
         </div>
@@ -127,7 +127,10 @@ session_start();
         <div class="col-md-6 text" style="font-size: 22px">$X pesos en premios</div>
         <div class="col-md-6 text" style="font-size: 22px"> Z ganadores</div>
 
-        <div style="height: 250px;"> Time</div></center>
+        <div style="height: 250px;">
+          <img src="{% static 'images/time.png' %}"/>
+          <!-- <p> Días</p> <p>8 horas</p> <p> 20 minutos</p> -->
+        </div></center>
       </div>
 
         <!-- If user is not authenticated-->
@@ -215,7 +218,7 @@ session_start();
             </div>
             <div class="col-md-2">
               <div class="circle" id="circle gift"><center>
-                <img src="{% static 'images/gift1.png' %}" style="position: absolute;left: 40px;top: 25px" /></center>
+                <img src="{% static 'images/gift1.png' %}" style="position: absolute;left: 25px;top: 10px;height: 80%; width: 80%" /></center>
                 <!--<div class="float-nav">
                 <a href="#" class="menu-btn">
                   <ul>
@@ -250,7 +253,10 @@ session_start();
           </div>
 
           {% if authenticated == 'block' %}
-           <script type="text/javascript"> move({{user.points}}) </script>
+           <script type="text/javascript"> 
+           move({{user.points}}); //modificar enlace referido
+           document.getElementById('url_field').innerHTML = window.location.href + "1";
+           </script>
           {% endif %}
 
         </div>
